@@ -1,0 +1,15 @@
+name: DevPostr Ping Action
+
+on:
+  schedule:
+    # Every 10 minutes between 7 AM–11 PM IST
+    # IST = UTC +5:30 → 7 AM–11 PM IST = 1:30 AM–5:30 PM UTC
+    - cron: "*/10 1-17 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping devpostr site
+        run: curl -s https://devpostr-worker.onrender.com > /dev/null
