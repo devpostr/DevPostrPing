@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping devpostr site
-        run: curl -s https://devpostr-worker.onrender.com > /dev/null
+        run: curl -s https://devpostr-worker.onrender.com/worker > /dev/null
